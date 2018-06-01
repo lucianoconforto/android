@@ -9,8 +9,11 @@ cuida da interpretação dos modelos para a serialização e desserialização e
   
 ### Sefaz Android
  StatusServico
+ 
  Autorizacao
+ 
  Testado em Android 6.0 Marshmallow ou superior
+ 
 ### Donwload 
 https://github.com/brsefaz/android/raw/master/sefaz.jar
  
