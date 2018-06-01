@@ -1,9 +1,9 @@
 ### Sefaz Android
  StatusServico
- 
  Autorizacao
- 
  Testado em Android 6.0 Marshmallow ou superior
+### Donwload 
+ URL (like https://github.com/brsefaz/android/raw/master/sefaz.jar) 
  
 ### Dependencias Gradle
 ```gradle
