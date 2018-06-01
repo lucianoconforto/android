@@ -1,9 +1,11 @@
-
-# Sefaz Android
-## StatusServico
-## Autorizacao
-## Testado em Android 6.0 Marshmallow ou superior
-#Dependencias Gradle
+### Sefaz Android
+ StatusServico
+ 
+ Autorizacao
+ 
+ Testado em Android 6.0 Marshmallow ou superior
+ 
+### Dependencias Gradle
 ```gradle
     implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.0.2'
     implementation group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
@@ -11,6 +13,8 @@
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
     implementation files("libs/sefaz.jar")
 ```
+
+### Exemplo
 ```java
 package br.inf.sefaz.portalfiscal.test;
 
