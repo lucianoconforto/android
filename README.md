@@ -1,3 +1,12 @@
+### Projetos
+
+#### sefaz
+disponibiliza os metodos de comunicação com a sefaz 
+#### sefaz-xsd 
+cria a traveis dos arquivos  xsd  as classes modelos para comunicação com a sefaz 
+#### sefaz-xml
+cuida da interpretação dos modelos para a serialização e desserialização em xml 
+  
 ### Sefaz Android
  StatusServico
  Autorizacao
