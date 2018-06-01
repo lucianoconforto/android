@@ -2,7 +2,7 @@ apply plugin: 'java-library'
 configurations {
     onlyCodeJar
     jardep
-    damsefaz
+    sefazLibJar
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -30,8 +30,8 @@ dependencies {
 
 }
 //create a single Jar with all dependencies
-task damSefazJar(type: Jar , dependsOn: classes) {
-    baseName = "DAMSEFAZ"
+task sefazJar(type: Jar , dependsOn: classes) {
+    baseName = "sefaz"
 
     from sourceSets.main.output.classesDirs.collect{
         it.isDirectory() ? it : zipTree(it)
@@ -44,5 +44,5 @@ task damSefazJar(type: Jar , dependsOn: classes) {
 }
 artifacts {
     onlyCodeJar   jar
-    damsefaz      damSefazJar
+    sefazLibJar      sefazJar
 }
