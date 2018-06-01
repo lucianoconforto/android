@@ -1,0 +1,23 @@
+apply plugin: 'java'
+configurations {
+    onlyCodeJar
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jboss.forge.roaster:roaster-api:2.20.1.Final'
+    implementation 'org.jboss.forge.roaster:roaster-jdt:2.20.1.Final'
+    implementation project(path: ':sefaz-xml', configuration: 'onlyCodeJar')
+    implementation group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
+
+    implementation group: 'org.json', name: 'json', version: '20180130'
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies{
+
+}
+artifacts {
+    onlyCodeJar   jar
+}

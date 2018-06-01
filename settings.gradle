@@ -1,0 +1,1 @@
+include ':sefaz',':sefaz-test:app', ':sefaz-xml',':sefaz-xsd'

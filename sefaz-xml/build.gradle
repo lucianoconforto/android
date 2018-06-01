@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+configurations {
+    onlyCodeJar
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies{
+    implementation 'org.jboss.forge.roaster:roaster-api:2.20.1.Final'
+    implementation 'org.jboss.forge.roaster:roaster-jdt:2.20.1.Final'
+    testImplementation 'junit:junit:4.12'
+    implementation group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
+    implementation group: 'org.json', name: 'json', version: '20180130'
+
+
+}
+artifacts {
+    onlyCodeJar   jar
+}

@@ -1,0 +1,48 @@
+apply plugin: 'java-library'
+configurations {
+    onlyCodeJar
+    jardep
+    damsefaz
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies {
+
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.0.2'
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    testCompile 'junit:junit:4.12'
+    compile project(path: ':sefaz-xml', configuration: 'onlyCodeJar')
+    compile project(path: ':sefaz-xsd', configuration: 'onlyCodeJar')
+    compile group: 'org.dom4j', name: 'dom4j', version: '2.1.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    compile group: 'com.google.android', name: 'android', version: '4.0.1.2'
+    jardep project(path: ':sefaz-xml', configuration: 'onlyCodeJar')
+    jardep project(path: ':sefaz-xsd', configuration: 'onlyCodeJar')
+
+
+
+}
+//create a single Jar with all dependencies
+task damSefazJar(type: Jar , dependsOn: classes) {
+    baseName = "DAMSEFAZ"
+
+    from sourceSets.main.output.classesDirs.collect{
+        it.isDirectory() ? it : zipTree(it)
+    }
+    from {
+        configurations.jardep.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    exclude('META-INF/MANIFEST.MF')
+}
+artifacts {
+    onlyCodeJar   jar
+    damsefaz      damSefazJar
+}
