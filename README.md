@@ -100,8 +100,6 @@ public class MainActivity extends AppCompatActivity {
 
         nfeStatusServico21Test(sefaz);
         fab.setOnClickListener(new View.OnClickListener() {
-            public static final String BASE_URL = "fgdg";
-
             @Override
             public void onClick(View view) {
                 nfeAutorizacao2Test(sefaz);
