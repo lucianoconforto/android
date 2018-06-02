@@ -432,13 +432,9 @@ public class MainActivity extends AppCompatActivity {
                 tEnviNFe.getNFe().add(nfe);
             }
             String urlQrCode = tEnviNFe.getNFe().get(0).getInfNFeSupl().getQrCode();
-            // se não estiver internet
+            // Duas maneiras de enviar 
             if (true){
-                // quardar essa string no banco para emitir depois
                 String xml = sefaz.toXml(tEnviNFe);
-
-
-                // esse metodo emite em um segundo momento o xml gerado
                 Sefaz.Call<TRetEnviNFe> response = sefaz.nfeAutorizacao(xml);
                 response.enqueue(new Sefaz.CallBack<TRetEnviNFe>() {
                     @Override
